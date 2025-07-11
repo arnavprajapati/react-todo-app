@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { use, useState } from 'react'
 import { MdCheck, MdDelete  } from "react-icons/md";
 import './Todo.css'
 
@@ -6,6 +6,8 @@ const Todo = () => {
 
     const [inputValue, setInputValue] = useState("")
     const [task, setTask] = useState([])
+
+    const [dateTime, setDateTime] = useState("")
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
@@ -18,10 +20,18 @@ const Todo = () => {
         setInputValue("");  
     }
 
+    setInterval(() => {
+        const now = new Date()
+        const formattedDate = now.toLocaleDateString()
+        const formattedTime = now.toLocaleTimeString()
+        setDateTime(`${formattedDate} - ${formattedTime}`)
+    }, 1000);
+
     return (
         <section className="todo-container">
             <header>
                 <h1>Todo List</h1>
+                <h2 className='date-time'>{dateTime}</h2>
             </header>
             <section className="form">
                 <form onSubmit={(event) => handleFormSubmit(event)}>

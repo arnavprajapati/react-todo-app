@@ -1,12 +1,20 @@
+@font-face {
+    font-family: gilroy;
+    src: url('../../fonts/Gilroy-Regular.ttf');
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Urbanist", sans-serif;
 }
 
 html {
     font-size: 62.5%;
+}
+
+body{
+    font-family: gilroy;
 }
 
 h1,
