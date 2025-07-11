@@ -24,6 +24,7 @@ h1 {
     font-weight: bold;
 }
 
+
 .todo-container {
     align-items: center;
     display: flex;
@@ -167,4 +168,50 @@ span {
 li span {
     max-width: 20rem;
     color: #1c2833;
+}
+
+.check-btn,
+.delete-btn {
+    font-size: 3rem;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 80%;
+    margin: 0 5px;
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.check-btn {
+    color: #fff;
+    background-color: #2ecc71;
+}
+
+.delete-btn {
+    color: #fff;
+    background-color: #e74c3c;
+}
+
+.checkList {
+    text-decoration: line-through;
+}
+
+.notCheckList {
+    text-decoration: none;
+}
+
+.clear-btn {
+    background-color: #e74c3c;
+    font-size: 1.6rem;
+    padding: 1rem 2.2rem;
+    border-radius: 0.3rem;
+    -webkit-border-radius: 0.3rem;
+    -moz-border-radius: 0.3rem;
+    -ms-border-radius: 0.3rem;
+    -o-border-radius: 0.3rem;
+}
+
+.clear-btn:hover {
+    background-color: #8d1407;
 }

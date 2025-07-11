@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { MdCheck, MdDelete  } from "react-icons/md";
 import './Todo.css'
 
 const Todo = () => {
@@ -9,7 +10,10 @@ const Todo = () => {
     const handleFormSubmit = (event) => {
         event.preventDefault();
         if (!inputValue) return;
-        if (task.includes(inputValue)) return;
+        if (task.includes(inputValue)) {
+            setInputValue("");  
+            return
+        };
         setTask((prevTask) => [...prevTask, inputValue]);
         setInputValue("");  
     }
@@ -30,6 +34,25 @@ const Todo = () => {
                         </button>
                     </div>
                 </form>
+            </section>
+            <section className='myUnOrdList'>
+                <ul>
+                    {
+                        task.map((currTask, index) => {
+                            return (
+                                <li key={index} className='todo-item'>
+                                    <span>{currTask}</span>
+                                    <button className='check-btn'>
+                                        <MdCheck />
+                                    </button>
+                                    <button className='delete-btn'>
+                                        <MdDelete />
+                                    </button>
+                                </li>
+                            )
+                        })
+                    }
+                </ul>
             </section>
         </section>
     )

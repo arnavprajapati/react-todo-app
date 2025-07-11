@@ -1,4 +1,4 @@
-import Todo from "./Projects/01TODO/Todo"
+import Todo from "./Projects/todo/Todo"
 
 const App = () => {
   return (
