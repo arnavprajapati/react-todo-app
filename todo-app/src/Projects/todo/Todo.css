@@ -112,7 +112,6 @@ button {
     border: none;
     outline: none;
     transition: box-shadow 200ms ease, background-color 200ms ease-in-out;
-    background-color: #2c3e50;
     color: rgb(0, 0, 0);
 }
 
@@ -186,18 +185,14 @@ li span {
     height: 3rem;
     border-radius: 80%;
     margin: 0 5px;
-    background-color: #fff;
-    color: rgb(0, 0, 0);
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
 }
 
 .check-btn {
-    color: #fff;
     background-color: #2ecc71;
 }
 
 .delete-btn {
-    color: #fff;
     background-color: #e74c3c;
 }
 
@@ -209,6 +204,11 @@ li span {
     text-decoration: none;
 }
 
+.clear-btn button{
+    background-color: #e74c3c;
+    cursor: pointer;
+}
+
 .clear-btn {
     background-color: #e74c3c;
     font-size: 1.6rem;
@@ -218,8 +218,4 @@ li span {
     -moz-border-radius: 0.3rem;
     -ms-border-radius: 0.3rem;
     -o-border-radius: 0.3rem;
-}
-
-.clear-btn:hover {
-    background-color: #8d1407;
 }

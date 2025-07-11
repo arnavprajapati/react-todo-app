@@ -32,6 +32,20 @@ const Todo = () => {
         return () => clearInterval(interval)
     }, [])
 
+    const handleDeleteToDo = (value) => {
+        console.log(value);
+        const updatedTask = task.filter((data) => data != value)
+        setTask(updatedTask)
+    }
+
+    useEffect(() => {
+        console.log(task);
+    }, [task])
+
+    const handleClearAllData = () => {
+        setTask([])
+    }
+
     return (
         <section className="todo-container">
             <header>
@@ -60,7 +74,7 @@ const Todo = () => {
                                     <button className='check-btn'>
                                         <MdCheck />
                                     </button>
-                                    <button className='delete-btn'>
+                                    <button className='delete-btn' onClick={() => handleDeleteToDo(currTask)}>
                                         <MdDelete />
                                     </button>
                                 </li>
@@ -68,6 +82,9 @@ const Todo = () => {
                         })
                     }
                 </ul>
+            </section>
+            <section className='clear-btn'>
+                <button onClick={() => handleClearAllData()}>Clear All</button>
             </section>
         </section>
     )
