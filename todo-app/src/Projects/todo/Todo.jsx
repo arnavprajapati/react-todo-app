@@ -1,4 +1,4 @@
-import { use, useState } from 'react'
+import { use, useEffect, useState } from 'react'
 import { MdCheck, MdDelete  } from "react-icons/md";
 import './Todo.css'
 
@@ -20,18 +20,23 @@ const Todo = () => {
         setInputValue("");  
     }
 
-    setInterval(() => {
-        const now = new Date()
-        const formattedDate = now.toLocaleDateString()
-        const formattedTime = now.toLocaleTimeString()
-        setDateTime(`${formattedDate} - ${formattedTime}`)
-    }, 1000);
+    useEffect(() => {
+
+        const interval = setInterval(() => {
+            const now = new Date()
+            const formattedDate = now.toLocaleDateString()
+            const formattedTime = now.toLocaleTimeString()
+            setDateTime(`${formattedDate} - ${formattedTime}`)
+        }, 1000);
+
+        return () => clearInterval(interval)
+    }, [])
 
     return (
         <section className="todo-container">
             <header>
                 <h1>Todo List</h1>
-                <h2 className='date-time'>{dateTime}</h2>
+                <h2 className='date-time'>{dateTime ? dateTime : "Loading  Date-Time..."}</h2>
             </header>
             <section className="form">
                 <form onSubmit={(event) => handleFormSubmit(event)}>
